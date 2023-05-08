@@ -7,6 +7,6 @@ if (fs.existsSync("./build")) {
   fse.removeSync("./build");
 }
 
-childProcess.execSync("ng build --prod", { stdio: "inherit" });
+childProcess.execSync("ng build --configuration production", { stdio: "inherit" });
 
 fse.moveSync("./build", "./server/build", { overwrite: true });
