@@ -28,9 +28,6 @@ import { GoogleMapsModule } from '@angular/google-maps';
     MatDialogModule,
     MatInputModule,
     GoogleMapsModule
-  ],
-  entryComponents: [
-    DataComponent
-  ],
+  ]
 })
 export class WeatherModule { }
