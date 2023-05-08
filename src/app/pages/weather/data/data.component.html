@@ -1,0 +1,7 @@
+<h2>The temperature of {{data.cityName}} is {{data.temp}}&#8451;</h2>
+
+<google-map [center]="center" [zoom]="zoom">
+    <map-marker #marker *ngFor="let markerPosition of markerPositions" [position]="markerPosition"
+        (mapClick)="openInfoWindow(marker)"></map-marker>
+    <map-info-window>{{ infoContent }}</map-info-window>
+</google-map>
