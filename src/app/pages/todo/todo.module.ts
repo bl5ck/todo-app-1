@@ -37,9 +37,6 @@ import { DialogComponent } from './things/dialog/dialog.component';
     MatListModule,
     MatCheckboxModule,
     MatDialogModule
-  ],
-  entryComponents: [
-    DialogComponent
-  ],
+  ]
 })
 export class TodoModule { }

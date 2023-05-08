@@ -4,8 +4,8 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ServiceInterceptor } from './service.interceptor';
-import { MMatLegacySnackBarModule as MatSnackBarModule} from '@@angular/material/legacy-snack-bar;
-import { MMatLegacyTabsModule as MatTabsModule} from '@@angular/material/legacy-tabs;
+import { MatLegacySnackBarModule as MatSnackBarModule} from '@angular/material/legacy-snack-bar';
+import { MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NotFoundComponent } from './pages/not-found/not-found.component';
