@@ -1,7 +1,10 @@
 ﻿require("dotenv").config({ path: __dirname + "/.env" });
+require('nedb-mongoose-driver').install();
+const os = require('os')
 const createError = require("http-errors");
 const express = require("express");
 const path = require("path");
+const fs = require('fs');
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const cors = require("cors");
@@ -17,9 +20,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.resolve(__dirname, "build")));
 app.use(cors());
-
+const dbPath = path.join(os.tmpdir(), 'nedb');
+fs.mkdirSync(dbPath, { recursive: true });
+mongoose.Promise = Promise;
 mongoose
-  .connect(process.env.MONGODB, {
+  .connect('mongodb://localhost/test', { dbPath ,
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false
